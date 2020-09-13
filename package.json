@@ -1,0 +1,31 @@
+{
+    "name": "trans2json",
+    "version": "1.0.0",
+    "author": "Jacek Berbecki <berbecki@gmail.com>",
+    "description": "Transform translation files from CSV to JSON. Preferred target NGX-translate.",
+    "main": "index.js",
+    "keywords": [
+        "translation",
+        "csv",
+        "json",
+        "angular",
+        "ngx-translate"
+    ],
+    "license": "MIT",
+    "bin": {
+        "trans2json": "./index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/berbecki/trans2json.git"
+      },
+    "bugs": {
+        "url": "https://github.com/berbecki/trans2json/issues"
+      },
+    "dependencies": {
+        "chalk": "^4.1.0",
+        "clear": "^0.1.0",
+        "figlet": "^1.5.0",
+        "yargs": "^16.0.2"
+    }
+}
