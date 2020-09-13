@@ -1,6 +1,6 @@
 {
     "name": "trans2json",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "Jacek Berbecki <berbecki@gmail.com>",
     "description": "Transform translation files from CSV to JSON. Preferred target NGX-translate.",
     "main": "index.js",

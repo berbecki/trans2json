@@ -9,41 +9,49 @@ Preferred target NGX-translate.
 
 ## Install
 
+```
 npm i trans2json
-
 npm i -g trans2json
-
+```
 ---
-
 The header of your CSV file must contain at least one prefix (which will be
 a token) and a translation list. The default number of prefixes is 3.
 
 ## For example:
+```CSV
   component,specificator,token,en,de,fr
+```
 
 All prefixes will be joined into the final translation token:
+```CSV
   component,specificator,token,en,de,fr
   app,headers,page_header,Main Page,Hauptseite,Page principale
-    =>
+```
+ =>
+```CSV
   en.json "app::headers::page_header": "Main Page"
   de.json "app::headers::page_header": "Hauptseite"
   fr.json "app::headers::page_header": "Page principale"
+```
 
 
 ## Options:
-  -h, --help       Show help                                           [boolean]
-  -v, --version    Show version number                                 [boolean]
-  -i, --input      Declare input path for your CSV translation file   [required]
-  -o, --output     Declare output path                                [required]
-  -s, --separator  Separator in CSV file                 [string] [default: ","]
-  -j, --joiner     Token joiner                         [string] [default: "::"]
-  -p, --prefixes   How many prefixes would you use         [number] [default: 3]
-  -c, --clear      Clear terminal viewport            [boolean] [default: false]
-  -d, --data       Show output data                   [boolean] [default: false]
+|||||
+|----|----|----|----|
+|-h, --help|       Show help|                                           |[boolean]|
+|-v, --version|    Show version number|                                 |[boolean]|
+|-i, --input|      Declare input path for your CSV translation file|   |[required]|
+|-o, --output|     Declare output path|                                |[required]|
+|-s, --separator|  Separator in CSV file|                 [string] |[default: ","]|
+|-j, --joiner|     Token joiner|                         [string] |[default: "::"]|
+|-p, --prefixes|   How many prefixes would you use|         [number] |[default: 3]|
+|-c, --clear|      Clear terminal viewport|            [boolean] |[default: false]|
+|-d, --data|       Show output data|                   [boolean] |[default: false]|
 
 ## Examples:
-  trans2json --help                         Show this message
-  trans2json --version                      Print out the installed version of
-                                            $0
-  trans2json -i /translation.csv -o         To make translations
-  /static/i18n
+  `trans2json --help`                        Show this message
+  
+  `trans2json --version`                      Print out the installed version of trans2json
+  
+  `trans2json -i /translation.csv -o /static/i18n`         To make translations
+
