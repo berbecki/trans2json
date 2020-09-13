@@ -58,7 +58,7 @@ All prefixes will be joined into the final translation token:
         },
         joiner: {
             alias: 'j',
-            description: 'Token joner',
+            description: 'Token\'s joiner',
             default: '::',
             type: 'string',
             requiresArg: false,
@@ -66,7 +66,7 @@ All prefixes will be joined into the final translation token:
         },
         prefixes: {
             alias: 'p',
-            description: '<filename> Input file name',
+            description: 'How many prefixes would you use',
             default: 3,
             type: 'number',
             requiresArg: false,
@@ -89,9 +89,6 @@ All prefixes will be joined into the final translation token:
         },
     })
 
-const files = require('./lib/files')
-const github = require('./lib/github')
-
 const {
     clear: clearPrompt,
     data,
@@ -107,10 +104,6 @@ if (clearPrompt) clear()
 console.log(
     chalk.yellow(figlet.textSync('CSV to JSON', { horizontalLayout: 'full' }))
 )
-
-// console.log(yargs)
-// console.dir(yargs.argv)
-// console.log(yargs.argv._)
 
 const getFilesData = (cb) => {
     let lines = ''
@@ -181,19 +174,3 @@ if (lines.length > 1) {
     })
     makeObject(normalizedData, langs)
 }
-
-if (files.directoryExists('.git')) {
-    console.log(chalk.red('Already a Git repository!'))
-    process.exit()
-}
-
-const run = async () => {
-    let token = github.getStoredGithubToken()
-    if (!token) {
-        token = await github.getPersonalAccesToken()
-    }
-    console.log(token)
-}
-
-// run()
-// console.log(chalk.yellow(' ---------------------------------------------------------------------------'))
